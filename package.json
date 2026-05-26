@@ -4,7 +4,9 @@
   "description": "![Design preview for the Savings Tracker coding challenge](./preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/styles.css",
+    "watch": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/styles.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +15,7 @@
   "overrides": {
     "tar": "^7.5.15"
   },
-    "dependencies": {
+  "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
@@ -25,5 +27,9 @@
     "passport-google-oauth2": "^0.2.0",
     "passport-local": "^1.0.0",
     "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
   }
 }

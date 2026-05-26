@@ -188,6 +188,9 @@
   .bottom-\[-0px\] {
     bottom: -0px;
   }
+  .bottom-\[-10px\] {
+    bottom: -10px;
+  }
   .bottom-\[-30px\] {
     bottom: -30px;
   }
@@ -197,11 +200,17 @@
   .bottom-\[-120px\] {
     bottom: -120px;
   }
+  .bottom-\[-160px\] {
+    bottom: -160px;
+  }
   .bottom-\[-170px\] {
     bottom: -170px;
   }
   .bottom-\[-180px\] {
     bottom: -180px;
+  }
+  .bottom-\[-190px\] {
+    bottom: -190px;
   }
   .bottom-\[-200px\] {
     bottom: -200px;
@@ -365,6 +374,9 @@
   }
   .pl-\[8px\] {
     padding-left: 8px;
+  }
+  .text-right {
+    text-align: right;
   }
   .font-bricolage {
     font-family: var(--font-bricolage);

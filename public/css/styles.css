@@ -188,20 +188,11 @@
   .bottom-\[-0px\] {
     bottom: -0px;
   }
+  .bottom-\[-2px\] {
+    bottom: -2px;
+  }
   .bottom-\[-10px\] {
     bottom: -10px;
-  }
-  .bottom-\[-30px\] {
-    bottom: -30px;
-  }
-  .bottom-\[-90px\] {
-    bottom: -90px;
-  }
-  .bottom-\[-120px\] {
-    bottom: -120px;
-  }
-  .bottom-\[-160px\] {
-    bottom: -160px;
   }
   .bottom-\[-170px\] {
     bottom: -170px;
@@ -215,8 +206,14 @@
   .bottom-\[-200px\] {
     bottom: -200px;
   }
-  .bottom-\[0px\] {
-    bottom: 0px;
+  .bottom-\[-205px\] {
+    bottom: -205px;
+  }
+  .bottom-\[-220px\] {
+    bottom: -220px;
+  }
+  .bottom-\[-2000px\] {
+    bottom: -2000px;
   }
   .bottom-\[20px\] {
     bottom: 20px;
@@ -272,11 +269,17 @@
   .h-\[54px\] {
     height: 54px;
   }
+  .h-\[400px\] {
+    height: 400px;
+  }
   .h-\[464px\] {
     height: 464px;
   }
   .w-\[100\%\] {
     width: 100%;
+  }
+  .w-\[400px\] {
+    width: 400px;
   }
   .w-\[464px\] {
     width: 464px;

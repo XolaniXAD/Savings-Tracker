@@ -37,6 +37,10 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
+app.get("/forgot-password", (req, res) => {
+    res.render("forgotPassword");
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

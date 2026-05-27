@@ -17,6 +17,7 @@
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-thin: 100;
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
@@ -308,6 +309,9 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-start {
+    justify-content: flex-start;
+  }
   .gap-x-2 {
     column-gap: calc(var(--spacing) * 2);
   }
@@ -330,14 +334,30 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-\[1px\] {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-\[\#3C3B40\] {
+    border-color: #3C3B40;
+  }
   .border-\[\#676767\] {
     border-color: #676767;
+  }
+  .border-\[\#\] {
+    border-color: #;
+  }
+  .bg-\[\#1F1F1F\] {
+    background-color: #1F1F1F;
   }
   .bg-\[\#313131\] {
     background-color: #313131;
   }
   .bg-\[\#FF5722\] {
     background-color: #FF5722;
+  }
+  .bg-\[1F1F1F\] {
+    background-color: 1F1F1F;
   }
   .bg-black {
     background-color: var(--color-black);
@@ -417,6 +437,10 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -435,6 +459,9 @@
   }
   .text-\[\#B7B7B7\] {
     color: #B7B7B7;
+  }
+  .text-\[\#B7\] {
+    color: #B7;
   }
   .text-black {
     color: var(--color-black);
@@ -475,11 +502,37 @@
       }
     }
   }
+  .hover\:bg-\[\#333333\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #333333;
+      }
+    }
+  }
+  .hover\:bg-\[\#\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #;
+      }
+    }
+  }
   .hover\:bg-\[\#e04e1f\] {
     &:hover {
       @media (hover: hover) {
         background-color: #e04e1f;
       }
+    }
+  }
+  .hover\:bg-\[\#e\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #e;
+      }
+    }
+  }
+  .active\:bg-\[\#1a1a1a\] {
+    &:active {
+      background-color: #1a1a1a;
     }
   }
   .active\:bg-\[\#252525\] {

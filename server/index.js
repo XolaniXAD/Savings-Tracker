@@ -41,6 +41,15 @@ app.get("/forgot-password", (req, res) => {
     res.render("forgotPassword");
 });
 
+app.post("/forgot-password", (req, res) => {
+    // TODO: add real email logic here
+    res.redirect("/email-sent");
+});
+
+app.get("/email-sent", (req, res) => {
+    res.render("emailSent");
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

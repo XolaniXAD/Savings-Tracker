@@ -50,6 +50,14 @@ app.get("/email-sent", (req, res) => {
     res.render("emailSent");
 });
 
+app.get("/reset-password", (req, res) => {
+    res.render("newPassword");
+});
+
+app.get("/success", (req, res) => {
+    res.render("success");
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

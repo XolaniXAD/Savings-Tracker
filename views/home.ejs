@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<!-- box-border helps width calculations behave predictably -->
+<body class="bg-black font-inter overflow-x-hidden box-border">
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <nav class="flex items-center justify-between p-4 bg-black border-b border-[#3C3B40] w-full">
+
+        <!-- Logo container -->
+        <div class="flex items-center gap-x-3">
+
+            <div class="img-container">
+                <img
+                    class="w-[40px] h-[40px]"
+                    src="assets/images/logo-small.svg"
+                    alt="Savings Tracker logo"
+                >
+            </div>
+
+            <h1 class="font-bricolage font-semibold text-2xl hidden md:block">
+                Savings Tracker
+            </h1>
+
+        </div>
+
+        <!-- New Goal Button -->
+        <div>
+            <a href="/new-goal">
+
+                <button class="bg-[#FF5722] text-black font-semibold py-2 px-4 rounded-3xl hover:bg-[#FF7043] w-[140px] h-[48px] cursor-pointer">
+
+                    <span class="mr-[10px]">+</span>
+                    New Goal
+
+                </button>
+
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="mb-8 w-full max-w-full overflow-hidden">
+
+        <!-- Dashboard cards grid -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 p-4">
+
+            <!-- Total savings -->
+            <div class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[16px] font-semibold">
+                    Total Savings
+                </h1>
+
+                <p class="text-[44px] font-bold mt-8">
+                    $<span>11,249.00</span>
+                </p>
+
+            </div>
+
+
+            <!-- Active goals -->
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4">
+
+                <h2 class="font-semibold">
+                    Active goals
+                </h2>
+
+                <p class="font-bold text-[#FF5722] text-[44px] mt-8">
+                    7
+                </p>
+
+            </div>
+
+
+            <!-- Goals completed -->
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4">
+
+                <h2 class="font-semibold">
+                    Goals completed
+                </h2>
+
+                <p class="font-bold text-[#4ADE80] text-[44px] mt-8">
+                    2
+                </p>
+
+            </div>
+
+
+            <!-- Monthly deposits chart -->
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4">
+
+                <h2 class="text-[20px] font-semibold mb-6">
+                    Monthly deposits
+                </h2>
+
+                <!-- Chart bars -->
+                <div class="flex items-end gap-2 h-56 w-full">
+
+                    <!-- Reusable bar item -->
+                    <div class="flex flex-col items-center flex-1 min-w-0">
+                        <div class="w-full h-10 bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$400</p>
+                        <p class="text-sm font-semibold">Aug</p>
+                    </div>
+
+                    <div class="flex flex-col items-center flex-1 min-w-0">
+                        <div class="w-full h-28 bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,150</p>
+                        <p class="text-sm font-semibold">Sep</p>
+                    </div>
+
+                    <div class="flex flex-col items-center flex-1 min-w-0">
+                        <div class="w-full h-28 bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,149</p>
+                        <p class="text-sm font-semibold">Oct</p>
+                    </div>
+
+                    <div class="flex flex-col items-center flex-1 min-w-0">
+                        <div class="w-full h-36 bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,550</p>
+                        <p class="text-sm font-semibold">Nov</p>
+                    </div>
+
+                    <div class="flex flex-col items-center flex-1 min-w-0">
+                        <div class="w-full h-44 bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,950</p>
+                        <p class="text-sm font-semibold">Dec</p>
+                    </div>
+
+                    <div class="flex flex-col items-center flex-1 min-w-0">
+                        <div class="w-full h-24 bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,025</p>
+                        <p class="text-sm font-semibold">Jan</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GOALS SECTION
+        ========================== -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+
+            <div>
+
+                <h2 class="text-white text-[32px] font-bold">
+                    Your goals
+                </h2>
+
+                <!-- 
+                    Important fix:
+                    - flex-1 shares space equally
+                    - min-w-0 prevents overflow on 320px
+                    - gap-4 keeps consistent spacing
+                -->
+                <div class="flex gap-4 mt-[20px]">
+
+                    <button class="flex-1 min-w-0 border border-[#3C3B40] px-4 py-2 rounded-3xl bg-[#1F1F1F]">
+                        <span>☰</span>
+                        Filters
+                    </button>
+
+                    <button class="flex-1 min-w-0 border border-[#3C3B40] px-4 py-2 rounded-3xl bg-[#1F1F1F]">
+                        <span>↑↓</span>
+                        Sort by
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    MacBook Pro M4
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] font-bold mt-10">
+                        76%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#903014] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-white w-[76%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$1900 of $2,499 <span class="text-white/50">•</span> Due 1 June 2026</p>
+                    </div>
+                </div>    
+            </div>
+
+            
+
+             <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    React Conf Trip
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                        72%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-[#FF5722] w-[72%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$1,299 of $1,800 <span class="text-white/50">•</span> Due 15 May 2026</p>
+                    </div>
+                </div>    
+            </div>
+
+
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    Anniversary Trip to Italy
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                        60%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-[#FF5722] w-[60%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$2,200 of $4,000 <span class="text-white/50">•</span> Due 15 Feb 2026</p>
+                    </div>
+                </div>    
+            </div>
+
+
+
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-[20px] font-semibold">
+                         Mechanical Keyboard
+                    </h1>
+
+                    <span class="bg-[#1A3D2B] text-[#4ADE80] border border-[#4ADE80] px-3 py-1 rounded-full inline-block">COMPLETE</span>
+                </div>
+                
+
+                <div class="mt-10"><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] text-[#4ADE80] font-bold mt-10">
+                        60%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-[#4ADE80] w-[100%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$350 of $350 <span class="text-white/50">•</span> Due 15 Mar 2026</p>
+                    </div>
+                </div>    
+            </div>
+
+
+
+            <div class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    Emergency Fund
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] font-bold mt-10">
+                        80%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#903014] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-white w-[80%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$4,000 of $5,000 <span class="text-white/50">•</span>    No deadline</p>
+                    </div>
+                </div>    
+            </div>
+
+
+
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    New Road Bike
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                        57%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-[#FF5722] w-[57%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$850 of $1,500 <span class="text-white/50">•</span> Due 1 May 2026</p>
+                    </div>
+                </div>    
+            </div>
+
+
+
+
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    Economic Chair
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] text-[#898A8B] font-bold mt-8">
+                        0%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-[#FF5722] w-[0%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$850 of $1,500 <span class="text-white/50">•</span> Due 1 May 2026</p>
+                    </div>
+                </div>    
+            </div>
+
+
+
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between">
+
+                <h1 class="text-[20px] font-semibold">
+                    4K Monitor Upgrade
+                </h1>
+
+                <div><!-- Percentage, bar and amount left -->
+    
+                    <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                        75%
+                    </p>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+
+                        <!-- Fill -->
+                        <div class="h-full bg-[#FF5722] w-[75%] rounded-full relative overflow-hidden">
+
+                            <!-- Stripe overlay -->
+                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-[14px]font-medium"><!--Savings gauge-->
+                        <p>$450 of $600 <span class="text-white/50">•</span> Due 30 Apr 2026</p>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

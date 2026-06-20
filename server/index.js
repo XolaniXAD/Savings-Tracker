@@ -58,6 +58,10 @@ app.get("/success", (req, res) => {
     res.render("success");
 });
 
+app.get("/details", (req, res) => {
+    res.render("details");
+});
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

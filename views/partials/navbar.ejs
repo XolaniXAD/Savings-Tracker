@@ -1,6 +1,39 @@
 <link rel="stylesheet" href="/css/styles.css">
 
-<nav>
-    <a href="/login">Login</a>
-    <a href="/signup">Signup</a>
+<nav class="flex items-center justify-between p-4 bg-[#101010] border-b border-[#3C3B40] w-full">
+
+    <!-- Logo / Home Link Container -->
+    <!-- Wrapping this in a link is best practice so users can click the logo to go home -->
+    <a href="/" class="flex items-center gap-x-3 text-white no-underline focus:outline-none">
+        <div class="img-container">
+            <img
+                class="w-[40px] h-[40px]"
+                src="assets/images/logo-small.svg"
+                alt="Savings Tracker Home"
+            >
+        </div>
+
+        <!-- Changed from <h1> to a semantic paragraph styled exactly the same -->
+        <p class="font-bricolage font-semibold text-2xl hidden md:block">
+            Savings Tracker
+        </p>
+    </a>
+
+    <!-- New Goal Action -->
+    <div>
+        <!-- Kept all your button styles, but applied them directly to the anchor tag -->
+        <a href="/new-goal" class="bg-[#FF5722] text-black font-semibold py-2 px-4 rounded-3xl w-[140px] h-[48px] flex items-center justify-center hover:-translate-y-1
+            active:translate-y-0
+            transition-transform duration-200
+            cursor-pointer
+            focus:outline-none
+            block no-underline">
+
+            <!-- aria-hidden="true" stops screen readers from reading the literal word "plus" -->
+            <span class="mr-[10px]" aria-hidden="true">+</span>
+            New Goal
+
+        </a>
+    </div>
+
 </nav>

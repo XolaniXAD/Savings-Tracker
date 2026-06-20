@@ -8,62 +8,17 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<!-- box-border helps width calculations behave predictably -->
 <body class="bg-black font-inter overflow-x-hidden box-border">
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-    <nav class="flex items-center justify-between p-4 bg-black border-b border-[#3C3B40] w-full">
-
-        <!-- Logo container -->
-        <div class="flex items-center gap-x-3">
-
-            <div class="img-container">
-                <img
-                    class="w-[40px] h-[40px]"
-                    src="assets/images/logo-small.svg"
-                    alt="Savings Tracker logo"
-                >
-            </div>
-
-            <h1 class="font-bricolage font-semibold text-2xl hidden md:block">
-                Savings Tracker
-            </h1>
-
-        </div>
-
-        <!-- New Goal Button -->
-        <div>
-            <a href="/new-goal">
-
-                <button class="bg-[#FF5722] text-black font-semibold py-2 px-4 rounded-3xl w-[140px] h-[48px] cursor-pointer hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                block">
-
-                    <span class="mr-[10px]">+</span>
-                    New Goal
-
-                </button>
-
-            </a>
-        </div>
-
-    </nav>
+    <%- include("partials/navbar.ejs") %>
 
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
     <main class="mb-8 w-full max-w-full overflow-hidden lg:ps-[80px] lg:pe-[80px]">
 
-        <!-- Dashboard cards grid -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 p-4">
+        <h1 class="sr-only">Financial Savings Dashboard</h1>
 
-            <!-- Total savings -->
+        <section aria-label="Savings Overview" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 p-4">
+
             <a href="#"
                 class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
                 active:translate-y-0
@@ -71,448 +26,445 @@
                 cursor-pointer
                 focus:outline-none
                 block md:col-span-2">
-    <h1 class="text-[16px] font-semibold">
-        Total Savings
-    </h1>
+                <h2 class="text-[16px] font-semibold">
+                    Total Savings
+                </h2>
 
-    <p class="text-[44px] font-bold mt-8">
-        $<span>11,249.00</span>
-    </p>
+                <p class="text-[44px] font-bold mt-8">
+                    $<span>11,249.00</span>
+                </p>
+            </a>
 
-</a>
 
-
-            <!-- Active goals -->
-<a class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
                 active:translate-y-0
                 transition-transform duration-200
                 cursor-pointer
                 focus:outline-none
                 block relative overflow-hidden">
-<img src="/assets/images/pattern-star.svg" alt="pattern-star" class="absolute top-0 w-[200px] h-[200px]" style="right: -50px; top: 50px;" /><!-- star stays inside card -->
-                <h2 class="font-semibold">
+                <img src="/assets/images/pattern-star.svg" alt="" role="presentation" class="absolute top-0 w-[200px] h-[200px]" style="right: -50px; top: 50px;" /><h2 class="font-semibold">
                     Active goals
                 </h2>
 
                 <p class="font-bold text-[#FF5722] text-[44px] mt-8">
                     7
                 </p>
-
             </a>
 
 
-            <!-- Goals completed -->
-            <!-- Active goals -->
-<a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
                 active:translate-y-0
                 transition-transform duration-200
                 cursor-pointer
                 focus:outline-none
                 block relative overflow-hidden">
-                <img src="/assets/images/pattern-star.svg" alt="pattern-star" class="absolute top-0 w-[200px] h-[200px]" style="right: -50px; top: 50px;" /><!--Star matches the positioning/clipping of the previous card--> 
-                <h2 class="font-semibold">
+                <img src="/assets/images/pattern-star.svg" alt="" role="presentation" class="absolute top-0 w-[200px] h-[200px]" style="right: -50px; top: 50px;" /><h2 class="font-semibold">
                     Goals completed
                 </h2>
 
                 <p class="font-bold text-[#4ADE80] text-[44px] mt-8">
                     2
                 </p>
-
             </a>
 
 
-            <!-- Monthly deposits chart -->
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4
-            cursor-pointer
-            focus:outline-none
-            block md:col-span-2 lg:col-span-4">
-            <h2 class="text-[20px] font-semibold mb-6">
-                Monthly deposits
-            </h2>
+            <div class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 block md:col-span-2 lg:col-span-4" aria-label="Monthly Deposits Breakdown Chart">
+                <h2 class="text-[20px] font-semibold mb-6">
+                    Monthly deposits
+                </h2>
 
-            <div class="flex items-end gap-2 md:gap-4 w-full">
+                <div class="flex items-end gap-2 md:gap-4 w-full">
 
-            <!--Chart-->    
-            <div class="hidden md:flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[0%] bg-[#FF5722] rounded-[8px]"></div>
+                    <figure class="hidden md:flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="April deposits: $0">
+                            <div class="w-full h-[0%] bg-[#FF5722] rounded-[8px]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$0</p>
+                            <p class="text-sm font-semibold">Apr</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hidden md:flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="May deposits: $0">
+                            <div class="w-full h-[0%] bg-[#FF5722] rounded-[8px]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$0</p>
+                            <p class="text-sm font-semibold">May</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hidden md:flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="June deposits: $500">
+                            <div class="w-full h-[26%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$500</p>
+                            <p class="text-sm font-semibold">Jun</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hidden md:flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="July deposits: $400">
+                            <div class="w-full h-[20%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$400</p>
+                            <p class="text-sm font-semibold">Jul</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hidden md:flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="August deposits: $400">
+                            <div class="w-full h-[20%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$400</p>
+                            <p class="text-sm font-semibold">Aug</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="September deposits: $1,150">
+                            <div class="w-full h-[59%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,150</p>
+                            <p class="text-sm font-semibold">Sep</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="October deposits: $1,149">
+                            <div class="w-full h-[59%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,149</p>
+                            <p class="text-sm font-semibold">Oct</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="November deposits: $1,550">
+                            <div class="w-full h-[79%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,550</p>
+                            <p class="text-sm font-semibold">Nov</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="December deposits: $1,950">
+                            <div class="w-full h-[100%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,950</p>
+                            <p class="text-sm font-semibold">Dec</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="January deposits: $1,025">
+                            <div class="w-full h-[44%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,025</p>
+                            <p class="text-sm font-semibold">Jan</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="February deposits: $1,550">
+                            <div class="w-full h-[66%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,550</p>
+                            <p class="text-sm font-semibold">Feb</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hidden md:flex flex-col items-center flex-1 min-w-0 m-0">
+                        <div class="h-44 w-full flex items-end" aria-label="March deposits: $1,550">
+                            <div class="w-full h-[66%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
+                        </div>
+                        <figcaption class="text-center mt-4">
+                            <p class="text-[11px] text-[#B7B7B7] font-medium">$1,550</p>
+                            <p class="text-sm font-semibold">Mar</p>
+                        </figcaption>
+                    </figure>
+
                 </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$0</p>
-                <p class="text-sm font-semibold">Apr</p>
             </div>
 
-            <div class="hidden md:flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[0%] bg-[#FF5722] rounded-[8px]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$0</p>
-                <p class="text-sm font-semibold">May</p>
-            </div>
-
-            <div class="hidden md:flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[26%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$500</p>
-                <p class="text-sm font-semibold">Jun</p>
-            </div>
-
-            <div class="hidden md:flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[20%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$400</p>
-                <p class="text-sm font-semibold">Jul</p>
-            </div>
-
-            <div class="hidden md:flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[20%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$400</p>
-                <p class="text-sm font-semibold">Aug</p>
-            </div>
-
-            <div class="flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[59%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,150</p>
-                <p class="text-sm font-semibold">Sep</p>
-            </div>
-
-            <div class="flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[59%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,149</p>
-                <p class="text-sm font-semibold">Oct</p>
-            </div>
-
-            <div class="flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[79%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,550</p>
-                <p class="text-sm font-semibold">Nov</p>
-            </div>
-
-            <div class="flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[100%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,950</p>
-                <p class="text-sm font-semibold">Dec</p>
-            </div>
-
-            <div class="flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[44%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,025</p>
-                <p class="text-sm font-semibold">Jan</p>
-            </div>
-
-            <div class="flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[66%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,550</p>
-                <p class="text-sm font-semibold">Feb</p>
-            </div>
-
-            <div class="hidden md:flex flex-col items-center flex-1 min-w-0">
-                <div class="h-44 w-full flex items-end">
-                    <div class="w-full h-[66%] bg-[#FF5722] rounded-[8px] border border-[#ff8a67]"></div>
-                </div>
-                <p class="text-[11px] text-[#B7B7B7] mt-4 font-medium">$1,550</p>
-                <p class="text-sm font-semibold">Mar</p>
-            </div>
-
-        </div>
-
-        </a>
-
-        </div>
+        </section>
 
 
-        <!-- =========================
-             GOALS SECTION
-        ========================== -->
+        <section aria-labelledby="goals-section-title">
 
-        <div class="w-full ps-4 pe-4 md:flex md:justify-between md:items-center">
-
-                <h2 class="text-white text-[32px] font-bold">
+            <div class="w-full ps-4 pe-4 md:flex md:justify-between md:items-center">
+                <h2 id="goals-section-title" class="text-white text-[32px] font-bold">
                     Your goals
                 </h2>
 
-                <!-- 
-                    Important fix:
-                    - flex-1 shares space equally
-                    - min-w-0 prevents overflow on 320px
-                    - gap-4 keeps consistent spacing
-                -->
                 <div class="flex gap-4 mt-[20px]">
-                <button class="flex-1 md:flex-initial min-w-0 md:w-[116px] md:h-[48px] flex items-center justify-center gap-2 border border-[#3C3B40] px-4 py-2 md:p-0 rounded-full bg-[#1F1F1F] text-white text-base font-normal hover:bg-[#2A2A2A] hover:border-[#5A5A5F] active:scale-[0.98] active:bg-[#343438] focus:outline-none transition-all duration-200 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h18M6 12h12M10 20h4"></path>
-                    </svg>
-                    <span>Filters</span>
-                </button>
+                    <button type="button" class="flex-1 md:flex-initial min-w-0 md:w-[116px] md:h-[48px] flex items-center justify-center gap-2 border border-[#3C3B40] px-4 py-2 md:p-0 rounded-full bg-[#1F1F1F] text-white text-base font-normal hover:bg-[#2A2A2A] hover:border-[#5A5A5F] active:scale-[0.98] active:bg-[#343438] focus:outline-none transition-all duration-200 cursor-pointer">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h18M6 12h12M10 20h4"></path>
+                        </svg>
+                        <span>Filters</span>
+                    </button>
 
-                <button class="flex-1 md:flex-initial min-w-0 md:w-[116px] md:h-[48px] flex items-center justify-center gap-2 border border-[#3C3B40] px-4 py-2 md:p-0 rounded-full bg-[#1F1F1F] text-white text-base font-normal hover:bg-[#2A2A2A] hover:border-[#5A5A5F] active:scale-[0.98] active:bg-[#343438] focus:outline-none transition-all duration-200 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
-                    </svg>
-                    <span>Sort by</span>
-                </button>
+                    <button type="button" class="flex-1 md:flex-initial min-w-0 md:w-[116px] md:h-[48px] flex items-center justify-center gap-2 border border-[#3C3B40] px-4 py-2 md:p-0 rounded-full bg-[#1F1F1F] text-white text-base font-normal hover:bg-[#2A2A2A] hover:border-[#5A5A5F] active:scale-[0.98] active:bg-[#343438] focus:outline-none transition-all duration-200 cursor-pointer">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
+                        </svg>
+                        <span>Sort by</span>
+                    </button>
                 </div>
-
-                </div>
-
             </div>
-
-            
-
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 lg:auto-rows-[259px]">
 
-            <a href="#" class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                md:col-span-2 lg:col-span-2">
+                <article class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    md:col-span-2 lg:col-span-2">
+<a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold font-bricolage">
+                            MacBook Pro M4
+                        </h3>
 
-                <h1 class="text-[20px] font-semibold">
-                    MacBook Pro M4
-                </h1>
+                        <div>
+                            <p class="text-[44px] font-bold mt-10">
+                                76%
+                            </p>
 
-                <div><p class="text-[44px] font-bold mt-10">
-                        76%
-                    </p>
+                            <div role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#903014] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-white w-[76%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-                    <div class="w-full bg-[#903014] h-3 rounded-full overflow-hidden">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$1900 of $2,499 <span class="text-white/50">•</span> Due <time datetime="2026-06-01">1 June 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                        <div class="h-full bg-white w-[76%] rounded-full relative overflow-hidden">
-
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
-
+                <article class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    md:col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-3 lg:row-start-1">
+                    <a href="#" class="contents text-white">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-[20px] font-semibold">
+                                 Mechanical Keyboard
+                            </h3>
+                            <span class="bg-[#1A3D2B] text-[#4ADE80] border border-[#4ADE80] px-3 py-1 rounded-full inline-block text-[12px] font-bold">COMPLETE</span>
                         </div>
-                    </div>
+                        
+                        <div class="mt-10">
+                            <p class="text-[44px] text-[#4ADE80] font-bold mt-10 md:mt-0">
+                                100%
+                            </p>
 
-                    <div class="mt-4 text-[14px] font-medium"><p>$1900 of $2,499 <span class="text-white/50">•</span> Due 1 June 2026</p>
-                    </div>
-                </div>    
-            </a>
+                            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#4ADE80] w-[100%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                md:col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-3 lg:row-start-1">
-                <div class="flex justify-between items-center">
-                    <h1 class="text-[20px] font-semibold">
-                         Mechanical Keyboard
-                    </h1>
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$350 of $350 <span class="text-white/50">•</span> Due <time datetime="2026-03-15">15 Mar 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                    <span class="bg-[#1A3D2B] text-[#4ADE80] border border-[#4ADE80] px-3 py-1 rounded-full inline-block">COMPLETE</span>
-                </div>
-                
+                <article class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    lg:col-span-1">
+                    <a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold">
+                            React Conf Trip
+                        </h3>
 
-                <div class="mt-10"><p class="text-[44px] text-[#4ADE80] font-bold mt-10 md:mt-0">
-                        100%
-                    </p>
+                        <div>
+                            <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                                72%
+                            </p>
 
-                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                            <div role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#FF5722] w-[72%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-                        <div class="h-full bg-[#4ADE80] w-[100%] rounded-full relative overflow-hidden">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$1,299 of $1,800 <span class="text-white/50">•</span> Due <time datetime="2026-05-15">15 May 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                <article class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    lg:col-span-1">
+                    <a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold">
+                            Anniversary Trip to Italy
+                        </h3>
 
-                        </div>
-                    </div>
+                        <div>
+                            <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                                60%
+                            </p>
 
-                    <div class="mt-4 text-[14px] font-medium"><p>$350 of $350 <span class="text-white/50">•</span> Due 15 Mar 2026</p>
-                    </div>
-                </div>    
-            </a>
+                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#FF5722] w-[60%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                lg:col-span-1">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$2,200 of $4,000 <span class="text-white/50">•</span> Due <time datetime="2026-02-15">15 Feb 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                <h1 class="text-[20px] font-semibold">
-                    React Conf Trip
-                </h1>
+                <article class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    md:col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-1 lg:row-start-3">
+                    <a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold">
+                            4K Monitor Upgrade
+                        </h3>
 
-                <div><p class="text-[44px] text-[#FF5722] font-bold mt-8">
-                        72%
-                    </p>
+                        <div>
+                            <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                                75%
+                            </p>
 
-                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                            <div role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#FF5722] w-[75%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-                        <div class="h-full bg-[#FF5722] w-[72%] rounded-full relative overflow-hidden">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$450 of $600 <span class="text-white/50">•</span> Due <time datetime="2026-04-30">30 Apr 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                <article class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    md:col-span-2 lg:col-span-2 lg:col-start-2 lg:row-start-3">
+                    <a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold">
+                            Emergency Fund
+                        </h3>
 
-                        </div>
-                    </div>
+                        <div>
+                            <p class="text-[44px] font-bold mt-10">
+                                80%
+                            </p>
 
-                    <div class="mt-4 text-[14px] font-medium"><p>$1,299 of $1,800 <span class="text-white/50">•</span> Due 15 May 2026</p>
-                    </div>
-                </div>    
-            </a>
+                            <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#903014] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-white w-[80%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                lg:col-span-1">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$4,000 of $5,000 <span class="text-white/50">•</span>    No deadline</p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                <h1 class="text-[20px] font-semibold">
-                    Anniversary Trip to Italy
-                </h1>
+                <article class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    lg:col-span-1 lg:col-start-2 lg:row-start-4">
+                    <a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold">
+                            New Road Bike
+                        </h3>
 
-                <div><p class="text-[44px] text-[#FF5722] font-bold mt-8">
-                        60%
-                    </p>
+                        <div>
+                            <p class="text-[44px] text-[#FF5722] font-bold mt-8">
+                                57%
+                            </p>
 
-                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                            <div role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#FF5722] w-[57%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-                        <div class="h-full bg-[#FF5722] w-[60%] rounded-full relative overflow-hidden">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$850 of $1,500 <span class="text-white/50">•</span> Due <time datetime="2026-05-01">1 May 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                <article class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
+                    active:translate-y-0
+                    transition-transform duration-200
+                    cursor-pointer
+                    focus:outline-none
+                    lg:col-span-1 lg:col-start-3 lg:row-start-4">
+                    <a href="#" class="contents text-white">
+                        <h3 class="text-[20px] font-semibold">
+                            Ergonomic Chair
+                        </h3>
 
-                        </div>
-                    </div>
+                        <div>
+                            <p class="text-[44px] text-[#898A8B] font-bold mt-8">
+                                0%
+                            </p>
 
-                    <div class="mt-4 text-[14px] font-medium"><p>$2,200 of $4,000 <span class="text-white/50">•</span> Due 15 Feb 2026</p>
-                    </div>
-                </div>    
-            </a>
+                            <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#FF5722] w-[0%] rounded-full relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                                </div>
+                            </div>
 
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                md:col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-1 lg:row-start-3">
+                            <div class="mt-4 text-[14px] font-medium">
+                                <p>$0 of $1,200 <span class="text-white/50">•</span> Due <time datetime="2026-08-01">1 Aug 2026</time></p>
+                            </div>
+                        </div>    
+                    </a>
+                </article>
 
-                <h1 class="text-[20px] font-semibold">
-                    4K Monitor Upgrade
-                </h1>
+            </div>
+        </section>
 
-                <div><p class="text-[44px] text-[#FF5722] font-bold mt-8">
-                        75%
-                    </p>
-
-                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
-
-                        <div class="h-full bg-[#FF5722] w-[75%] rounded-full relative overflow-hidden">
-
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
-
-                        </div>
-                    </div>
-
-                    <div class="mt-4 text-[14px] font-medium"><p>$450 of $600 <span class="text-white/50">•</span> Due 30 Apr 2026</p>
-                    </div>
-                </div>    
-            </a>
-
-            <a href="#" class="bg-linear-to-r from-[#B92B09] to-[#FF5722] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                md:col-span-2 lg:col-span-2 lg:col-start-2 lg:row-start-3">
-
-                <h1 class="text-[20px] font-semibold">
-                    Emergency Fund
-                </h1>
-
-                <div><p class="text-[44px] font-bold mt-10">
-                        80%
-                    </p>
-
-                    <div class="w-full bg-[#903014] h-3 rounded-full overflow-hidden">
-
-                        <div class="h-full bg-white w-[80%] rounded-full relative overflow-hidden">
-
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
-
-                        </div>
-                    </div>
-
-                    <div class="mt-4 text-[14px] font-medium"><p>$4,000 of $5,000 <span class="text-white/50">•</span>    No deadline</p>
-                    </div>
-                </div>    
-            </a>
-
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                lg:col-span-1 lg:col-start-2 lg:row-start-4">
-
-                <h1 class="text-[20px] font-semibold">
-                    New Road Bike
-                </h1>
-
-                <div><p class="text-[44px] text-[#FF5722] font-bold mt-8">
-                        57%
-                    </p>
-
-                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
-
-                        <div class="h-full bg-[#FF5722] w-[57%] rounded-full relative overflow-hidden">
-
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
-
-                        </div>
-                    </div>
-
-                    <div class="mt-4 text-[14px] font-medium"><p>$850 of $1,500 <span class="text-white/50">•</span> Due 1 May 2026</p>
-                    </div>
-                </div>    
-            </a>
-
-            <a href="#" class="bg-[#1F1F1F] text-white border border-[#898A8B] rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1
-                active:translate-y-0
-                transition-transform duration-200
-                cursor-pointer
-                focus:outline-none
-                lg:col-span-1 lg:col-start-3 lg:row-start-4">
-
-                <h1 class="text-[20px] font-semibold">
-                    Ergonomic Chair
-                </h1>
-
-                <div><p class="text-[44px] text-[#898A8B] font-bold mt-8">
-                        0%
-                    </p>
-
-                    <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden">
-
-                        <div class="h-full bg-[#FF5722] w-[0%] rounded-full relative overflow-hidden">
-
-                            <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
-
-                        </div>
-                    </div>
-
-                    <div class="mt-4 text-[14px] font-medium"><p>$0 of $1,200 <span class="text-white/50">•</span> Due 1 Aug 2026</p>
-                    </div>
-                </div>    
-            </a>
-</div>
     </main>
 
 </body>

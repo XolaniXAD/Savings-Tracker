@@ -1,0 +1,67 @@
+<div class="lg:col-span-2 flex flex-col gap-6">
+    
+    <section aria-label="Goal Progress" class="bg-[#1F1F1F] text-white border border-[#898A8B]/20 rounded-2xl p-6 flex flex-col justify-between">
+        <div class="flex justify-between items-center mb-8">
+            <p class="text-[44px] text-[#FF5722] font-bold">76%</p>
+            <p class="text-[16px] font-semibold text-[#B7B7B7]">$599.00 remaining</p>
+        </div>
+
+        <div>
+            <div class="w-full bg-[#313131] h-3 rounded-full overflow-hidden" aria-hidden="true">
+                <div class="h-full bg-[#FF5722] w-[76%] rounded-full relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(0,0,0,0.18)_0px,rgba(0,0,0,0.18)_1px,transparent_1px,transparent_6px)]"></div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="flex items-center justify-between text-[14px] font-medium">
+                    <span>$1,900.00</span>
+                    <span>of $2,499.00</span>
+                </div>
+                <div class="flex items-center justify-between text-[14px] font-medium text-[#B7B7B7]">
+                    <span>Saved so far</span>
+                    <span>Target</span>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+
+    <section aria-labelledby="form-heading" class="bg-[#1F1F1F] text-white border border-[#898A8B]/20 rounded-2xl p-6 flex flex-col justify-between">
+        <h2 id="form-heading" class="font-semibold text-[20px] mb-4">Add deposit</h2>
+
+        <form action="/your-submit-url" method="POST" class="w-full flex flex-col gap-5 text-white">
+            <div class="flex flex-col gap-2">
+                <label for="amount" class="text-[16px] font-medium tracking-wide pl-1 text-white">Amount</label>
+                <div class="relative flex items-center">
+                    <span class="absolute left-4 text-white text-[18px] font-medium" aria-hidden="true">$</span>
+                    <input 
+                        type="number" 
+                        id="amount" 
+                        name="amount" 
+                        placeholder="0.00" 
+                        class="w-full bg-[#313131] border border-[#B7B7B7]/30 rounded-xl py-4 pl-9 pr-4 text-white placeholder-white/30 text-[18px] focus:outline-none focus:border-[#FF5722] transition-colors"
+                    >
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="note" class="text-[16px] font-medium tracking-wide pl-1 text-white">Note (optional)</label>
+                <input 
+                    type="text" 
+                    id="note" 
+                    name="note" 
+                    placeholder="e.g. Monthly savings" 
+                    class="w-full bg-[#1F1F1F] border border-[#898A8B]/30 rounded-xl p-4 text-white placeholder-[#B7B7B7] font-medium text-[16px] focus:outline-none focus:border-[#FF5722] transition-colors"
+                >
+            </div>
+
+            <button 
+                type="submit" 
+                class="w-full bg-[#FF5722] text-black font-semibold text-[16px] py-4 rounded-full hover:bg-[#e04c1d] active:scale-[0.99] transition-all mt-2 cursor-pointer focus:outline-none"
+            >
+                Add funds
+            </button>
+        </form>
+    </section>
+</div>
